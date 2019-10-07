@@ -12,7 +12,7 @@ Enumeration:
 		* nmap -A -O -T5 -p- -v <ip>
 		* nmap -A -O -T5 -v -s<U|S|T> <ip>
 	* Reconnoitre
-		* reconnoitre -t 192.168.28.150 --services -o path
+		* reconnoitre -t x.x.x.x --services -o path
 	* Reconscan.py
 * Http[s]
 	* NSE, Nmap
@@ -56,7 +56,7 @@ Enumeration:
 	* Blank passwords with usernames
 	* No password or username
 	* Easily guessable passwords
-		* hydra -L userlist.txt -P /root/Desktop/lists/wordlists/rockyou.txt ssh://10.11.1.136 -V -t 40 -e nsr -o ssh_found
+		* hydra -L userlist.txt -P /root/Desktop/lists/wordlists/rockyou.txt ssh://x.x.x.x -V -t 40 -e nsr -o ssh_found
 	* Try reusing passwords you get across multiple services enabled on a target as well as users (Alpha)
 * Other information that you obtain from other machines you popped could help so be on the look out for information that may lead to a scenario like this (alice and bethany)
 
