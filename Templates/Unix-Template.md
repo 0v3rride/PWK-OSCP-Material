@@ -51,7 +51,7 @@ Enumeration:
 	* Host command
 * Passwords:
 	* Make wordlist from webpage
-		* cewl -w list.txt -a -e  --with-numbers https://10.11.1.44:8000
+		* cewl -w list.txt -a -e  --with-numbers x.x.x.x
 	* Default passwords for default configurations
 	* Blank passwords with usernames
 	* No password or username
