@@ -12,7 +12,7 @@ Enumeration:
 		* nmap -A -O -T5 -p- -v <ip>
 		* nmap -A -O -T5 -v -s<U|S|T> <ip>
 	* Reconnoitre
-		* reconnoitre -t 192.168.28.150 --services -o /root/Desktop/exam/150/reconscript/
+		* reconnoitre -t 192.168.28.150 --services -o path
 	* Reconscan.py
 * Http[s]
 	* NSE, Nmap
@@ -38,7 +38,7 @@ Enumeration:
 	* NSE, nmap (udp scan)
 		* nmap -A -O -T5 -v -s<U|S|T> <ip>
 	* Snmpwalk
-		* snmpwalk -c public -v1 10.11.1.219 
+		* snmpwalk -c public -v1 x.x.x.x
 	* Onesixtyone with seclist community strings list
 * Smtp
 	* NSE, nmap
@@ -51,7 +51,7 @@ Enumeration:
 	* Host command
 * Passwords:
 	* Make wordlist from webpage
-		* cewl -w list.txt -a -e  --with-numbers https://10.11.1.44:8000
+		* cewl -w list.txt -a -e  --with-numbers x.x.x.x
 	* Default passwords for default configurations
 	* Blank passwords with usernames
 	* No password or username
