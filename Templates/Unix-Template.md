@@ -78,113 +78,113 @@ Exploitation:
 
 Post-Exploitation:
 Priv esc:
-	* Pspy tools to catch processes firing off
-	* User information
-		* Whoami 
-		* Id
-	* Get OS and kernel information
-		* Lsb_release -a 
-		* Uname -a
-		* Uname -mrs
-	* Check environment variables
-		* Env
-		* Set
-	* Look for suid or guid bit set on files and software with suid vulns
-		* Find / -user root -perm -4000 -type f 2>/dev/null
-		* Find / -user root -perm -2000 -type f 2>/dev/null
-		* find / -perm -u=s -type f 2>/dev/null
-		* find / -perm -g=s -type f 2>/dev/null
-		* Nmap
-		* Vim
-		* Less
-		* More
-		* Cp
-		* Nano
-		* Mv
-		* Find
-	* Look for folders and files with certain permissions
-		* World writable folders
-			□ find / -writable -type d 2>/dev/null
-			□ find / -perm -222 -type d 2>/dev/null
-			□ find / -perm -o w -type d 2>/dev/null
-		* World executable folders
-			□ find / -perm -o x -type d 2>/dev/null
-		* World writable and executable folder
-			find / \( -perm -o w -perm -o x \) -type d 2>/dev/null
-	* Look in ssh folder
-		* /root/.ssh
-		* /home/user/.ssh
-	* Unmounted filesystems
-		* mount -l
-		* cat /etc/fstab
-	* NFS Shares
-		* Showmount -e <ip>
-		* Mount <ip>/directory /attacker/tmp
-	* Cronjobs/scheduled jobs
-		* Crontab -l
-		* ls -alh /var/spool/cron
-		* ls -al /etc/ | grep cron
-		* ls -al /etc/cron*
-		* cat /etc/cron*
-		* cat /etc/at.allow
-		* cat /etc/at.deny
-		* cat /etc/cron.allow
-		* cat /etc/cron.deny
-		* cat /etc/crontab
-		* cat /etc/anacrontab
-		* cat /var/spool/cron/crontabs/root
-	* Cat out passwd or shadow
-		* /etc/passwd - has priority over shadow (change password in this first)
-		* /etc/shadow
-	* Check history or bash_history files
-		* History
-		* Cat .bash_history
-	* List services running
-		* Ps aux
-		* Ps -ef
-		* Top
-		* Cat /etc/services
-	* User installed software
-		* /usr/local/
-		* /usr/local/src
-		* /usr/local/bin
-		* /usr/bin
-		* /sbin/
-		* /var/cache/apt/archives0
-		* /var/cache/yum
-		* /opt/
-		* /home
-		* /var/
-		* /usr/src/
-		* Dpkg -l (debian/ubuntu
-		* rpm -qa (CentOS / openSUSE )
-		* pkg_info (*BSD)
-	* Places and things to check for
-		* config.php
-		* /var/spool/mail
-		* grep -i user [filename]
-		* grep -i pass [filename]
-		* find / -iname "*password*" 2>/dev/null
-		* Grep -ri <string> <directory>
-		* cat /etc/passwd
-		* cat /etc/group
-		* cat /etc/shadow
-		* ls -alh /var/mail/
-		* ls -ahlR /root/
-		* ls -ahlR /home/
-		* cat /var/apache2/config.inc
-		* cat /var/lib/mysql/mysql/user.MYD
-		* cat /root/anaconda-ks.cfg
-		* cat ~/.bashrc
-		* cat ~/.profile
-		* cat /var/mail/root
-		* cat /var/spool/mail/root
-	* List networking information
-		* netstat -anlp
-		* netstat -ano
-	* World writeable directories for storing exploit code, etc.
-		* /tmp
-		* /var/tmp
-		* /dev/shm
-		* /var/spool/vbox
-		* /var/spool/samba
+* Pspy tools to catch processes firing off
+* User information
+	* Whoami 
+	* Id
+* Get OS and kernel information
+	* Lsb_release -a 
+	* Uname -a
+	* Uname -mrs
+* Check environment variables
+	* Env
+	* Set
+* Look for suid or guid bit set on files and software with suid vulns
+	* Find / -user root -perm -4000 -type f 2>/dev/null
+	* Find / -user root -perm -2000 -type f 2>/dev/null
+	* find / -perm -u=s -type f 2>/dev/null
+	* find / -perm -g=s -type f 2>/dev/null
+	* Nmap
+	* Vim
+	* Less
+	* More
+	* Cp
+	* Nano
+	* Mv
+	* Find
+* Look for folders and files with certain permissions
+	* World writable folders
+		□ find / -writable -type d 2>/dev/null
+		□ find / -perm -222 -type d 2>/dev/null
+		□ find / -perm -o w -type d 2>/dev/null
+	* World executable folders
+		□ find / -perm -o x -type d 2>/dev/null
+	* World writable and executable folder
+		find / \( -perm -o w -perm -o x \) -type d 2>/dev/null
+* Look in ssh folder
+	* /root/.ssh
+	* /home/user/.ssh
+* Unmounted filesystems
+	* mount -l
+	* cat /etc/fstab
+* NFS Shares
+	* Showmount -e <ip>
+	* Mount <ip>/directory /attacker/tmp
+* Cronjobs/scheduled jobs
+	* Crontab -l
+	* ls -alh /var/spool/cron
+	* ls -al /etc/ | grep cron
+	* ls -al /etc/cron*
+	* cat /etc/cron*
+	* cat /etc/at.allow
+	* cat /etc/at.deny
+	* cat /etc/cron.allow
+	* cat /etc/cron.deny
+	* cat /etc/crontab
+	* cat /etc/anacrontab
+	* cat /var/spool/cron/crontabs/root
+* Cat out passwd or shadow
+	* /etc/passwd - has priority over shadow (change password in this first)
+	* /etc/shadow
+* Check history or bash_history files
+	* History
+	* Cat .bash_history
+* List services running
+	* Ps aux
+	* Ps -ef
+	* Top
+	* Cat /etc/services
+* User installed software
+	* /usr/local/
+	* /usr/local/src
+	* /usr/local/bin
+	* /usr/bin
+	* /sbin/
+	* /var/cache/apt/archives0
+	* /var/cache/yum
+	* /opt/
+	* /home
+	* /var/
+	* /usr/src/
+	* Dpkg -l (debian/ubuntu
+	* rpm -qa (CentOS / openSUSE )
+	* pkg_info (*BSD)
+* Places and things to check for
+	* config.php
+	* /var/spool/mail
+	* grep -i user [filename]
+	* grep -i pass [filename]
+	* find / -iname "*password*" 2>/dev/null
+	* Grep -ri <string> <directory>
+	* cat /etc/passwd
+	* cat /etc/group
+	* cat /etc/shadow
+	* ls -alh /var/mail/
+	* ls -ahlR /root/
+	* ls -ahlR /home/
+	* cat /var/apache2/config.inc
+	* cat /var/lib/mysql/mysql/user.MYD
+	* cat /root/anaconda-ks.cfg
+	* cat ~/.bashrc
+	* cat ~/.profile
+	* cat /var/mail/root
+	* cat /var/spool/mail/root
+* List networking information
+	* netstat -anlp
+	* netstat -ano
+* World writeable directories for storing exploit code, etc.
+	* /tmp
+	* /var/tmp
+	* /dev/shm
+	* /var/spool/vbox
+	* /var/spool/samba
